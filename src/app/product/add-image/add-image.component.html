@@ -1,0 +1,24 @@
+<div class="container col-md-4 offset-md-4 mt-5">
+  <nav class="navbar navbar-light" style="background-color: #ffffff;">
+    <label for="files" button type="file" name="image" class="btn btn-secondary"> <i class="fa fa-plus"
+        aria-hidden="true"> </i>
+      Add Image</label>
+    <input type="file" id="files" (change)="handleFileInput($event)" style="display: none;">
+
+    <button class="btn btn-success" (click)="saveImages()">Save Image</button>
+    <button class="btn btn-success" (click)="cancel()">Cancel</button>
+  </nav>
+  <div class="text-danger" *ngIf="this.error">{{error}}</div>
+
+
+  <div class="row" *ngIf="showProduct !== null && showProduct !==undefined">
+    <div class="col">
+      <span *ngIf="showProduct.pantimg !== undefined && showProduct.pantimg !==''"><img class="img-fluid"
+          src="{{showProduct.pantimg}}" height="200px" width="200px"></span>
+      <span *ngIf="showProduct.shirtimg !== undefined"><img class="img-fluid" src="{{showProduct.shirtimg}}"
+          height="200px" width="200px"></span>
+
+    </div>
+  </div>
+
+</div>

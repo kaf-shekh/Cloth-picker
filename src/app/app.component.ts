@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<app-header></app-header>
+  <router-outlet></router-outlet>`
 })
-export class AppComponent {
-  title = 'Colth-picker';
+export class AppComponent implements OnInit {
+  constructor() {}
+  ngOnInit() { }
+
 }

@@ -1,0 +1,23 @@
+<div class="card container col-md-6">
+  <div class="card-header">Bookmark list</div>
+  <div class="card-body">
+    <span class="row" *ngFor="let userProduct of userData.userProduct">
+      <span *ngIf="userProduct.isBookMarked">
+        <img class="col" src="{{userProduct.shirtimg}}" height="200px" width="200px">
+        <img class="col" src="{{userProduct.pantimg}}" height="200px" width="200px">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+          <span *ngIf="userProduct.isBookMarked"> <i class='fa fa-bookmark'
+              (click)="changeBookmark(userProduct.ProductId)"></i>
+          </span>
+          <span *ngIf="userProduct.isDislike"><i class="fa fa-thumbs-down"
+              (click)="changeLike(userProduct.ProductId)"></i>
+          </span>
+          <span *ngIf="!userProduct.isDislike"><i class="fa fa-thumbs-o-down"
+              (click)="changeLike(userProduct.ProductId)"></i>
+          </span>
+          <i class="fa fa-share-square"></i>
+        </nav>
+      </span>
+    </span>
+  </div>
+</div>
